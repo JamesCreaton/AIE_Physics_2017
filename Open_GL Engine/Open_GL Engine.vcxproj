@@ -166,8 +166,10 @@
     <ClCompile Include="..\deps\gl_core_4_4\gl_core_4_4.c" />
     <ClCompile Include="..\deps\imgui\imgui.cpp" />
     <ClCompile Include="..\deps\imgui\imgui_draw.cpp" />
+    <ClCompile Include="AIE Classes\Font.cpp" />
+    <ClCompile Include="AIE Classes\Renderer2D.cpp" />
+    <ClCompile Include="AIE Classes\Texture.cpp" />
     <ClCompile Include="Application.cpp" />
-    <ClCompile Include="Assessment.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="DirectionalLight.cpp" />
     <ClCompile Include="FlyCamera.cpp" />
@@ -181,6 +183,7 @@
     <ClCompile Include="PhysicsScene.cpp" />
     <ClCompile Include="RenderData.cpp" />
     <ClCompile Include="Rigidbody.cpp" />
+    <ClCompile Include="Rocket.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Sphere.cpp" />
     <ClCompile Include="SphereBoundingVolume.cpp" />
@@ -193,8 +196,10 @@
     <ClInclude Include="..\deps\imgui\imconfig.h" />
     <ClInclude Include="..\deps\imgui\imgui.h" />
     <ClInclude Include="..\deps\imgui\imgui_internal.h" />
+    <ClInclude Include="AIE Classes\Font.h" />
+    <ClInclude Include="AIE Classes\Renderer2D.h" />
+    <ClInclude Include="AIE Classes\Texture.h" />
     <ClInclude Include="Application.h" />
-    <ClInclude Include="Assessment.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="DirectionalLight.h" />
     <ClInclude Include="FlyCamera.h" />
@@ -208,6 +213,7 @@
     <ClInclude Include="PhysicsScene.h" />
     <ClInclude Include="RenderData.h" />
     <ClInclude Include="Rigidbody.h" />
+    <ClInclude Include="Rocket.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="Sphere.h" />
     <ClInclude Include="SphereBoundingVolume.h" />

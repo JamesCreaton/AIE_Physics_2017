@@ -1,33 +1,4 @@
 ﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(368,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
-  tiny_obj_loader.cc
-  Texture.cpp
-  SphereBoundingVolume.cpp
-  Sphere.cpp
-  Shader.cpp
-c:\users\s171110\documents\aie_physics_17\open_gl engine\shader.cpp(60): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(936,5): warning MSB8027: Two or more files with the name of Texture.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are AIE Classes\Texture.cpp, Texture.cpp.
   Rigidbody.cpp
-  RenderData.cpp
-  PhysicsScene.cpp
-  PhysicsObject.cpp
-  PhysicsApp.cpp
-c:\users\s171110\documents\aie_physics_17\open_gl engine\physicsapp.cpp(28): error C2243: 'type cast': conversion from 'Sphere *' to 'PhysicsObject *' exists, but is inaccessible
-  main.cpp
-c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\crtdbg.h(302): warning C4005: '_malloca': macro redefinition
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\malloc.h(120): note: see previous definition of '_malloca'
-  Input.cpp
-  imgui_glfw3.cpp
-  GUI.cpp
-  GeometryHelper.cpp
-c:\users\s171110\documents\aie_physics_17\open_gl engine\geometryhelper.cpp(137): warning C4018: '<': signed/unsigned mismatch
-c:\users\s171110\documents\aie_physics_17\open_gl engine\geometryhelper.cpp(295): warning C4018: '<': signed/unsigned mismatch
-  FlyCamera.cpp
-  DirectionalLight.cpp
-  Camera.cpp
-  Assessment.cpp
-  Application.cpp
-  Generating Code...
-  Compiling...
-  imgui_draw.cpp
-  imgui.cpp
-  Gizmos.cpp
-  Generating Code...
+  Open_GL Engine.vcxproj -> C:\Users\s171110\Documents\AIE_physics_17\builds\Open_GL Engine.exe

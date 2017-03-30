@@ -1,5 +1,6 @@
 c:\users\s171110\documents\aie_physics_17\open_gl engine\debug\vc140.pdb
 c:\users\s171110\documents\aie_physics_17\open_gl engine\debug\vc140.idb
+c:\users\s171110\documents\aie_physics_17\open_gl engine\debug\application.obj
 c:\users\s171110\documents\aie_physics_17\open_gl engine\debug\assessment.obj
 c:\users\s171110\documents\aie_physics_17\open_gl engine\debug\camera.obj
 c:\users\s171110\documents\aie_physics_17\open_gl engine\debug\directionallight.obj
@@ -8,8 +9,11 @@ c:\users\s171110\documents\aie_physics_17\open_gl engine\debug\geometryhelper.ob
 c:\users\s171110\documents\aie_physics_17\open_gl engine\debug\gui.obj
 c:\users\s171110\documents\aie_physics_17\open_gl engine\debug\imgui_glfw3.obj
 c:\users\s171110\documents\aie_physics_17\open_gl engine\debug\input.obj
+c:\users\s171110\documents\aie_physics_17\open_gl engine\debug\main.obj
+c:\users\s171110\documents\aie_physics_17\open_gl engine\debug\physicsobject.obj
 c:\users\s171110\documents\aie_physics_17\open_gl engine\debug\physicsscene.obj
 c:\users\s171110\documents\aie_physics_17\open_gl engine\debug\renderdata.obj
+c:\users\s171110\documents\aie_physics_17\open_gl engine\debug\rigidbody.obj
 c:\users\s171110\documents\aie_physics_17\open_gl engine\debug\shader.obj
 c:\users\s171110\documents\aie_physics_17\open_gl engine\debug\sphere.obj
 c:\users\s171110\documents\aie_physics_17\open_gl engine\debug\sphereboundingvolume.obj
@@ -18,10 +22,7 @@ c:\users\s171110\documents\aie_physics_17\open_gl engine\debug\tiny_obj_loader.o
 c:\users\s171110\documents\aie_physics_17\open_gl engine\debug\gizmos.obj
 c:\users\s171110\documents\aie_physics_17\open_gl engine\debug\imgui.obj
 c:\users\s171110\documents\aie_physics_17\open_gl engine\debug\imgui_draw.obj
-c:\users\s171110\documents\aie_physics_17\open_gl engine\debug\application.obj
-c:\users\s171110\documents\aie_physics_17\open_gl engine\debug\main.obj
-c:\users\s171110\documents\aie_physics_17\open_gl engine\debug\rigidbody.obj
-c:\users\s171110\documents\aie_physics_17\open_gl engine\debug\physicsobject.obj
+c:\users\s171110\documents\aie_physics_17\open_gl engine\debug\physicsapp.obj
 c:\users\s171110\documents\aie_physics_17\open_gl engine\debug\open_gl engine.tlog\cl.command.1.tlog
 c:\users\s171110\documents\aie_physics_17\open_gl engine\debug\open_gl engine.tlog\cl.read.1.tlog
 c:\users\s171110\documents\aie_physics_17\open_gl engine\debug\open_gl engine.tlog\cl.write.1.tlog

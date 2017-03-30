@@ -37,12 +37,6 @@
     <Filter Include="Source Files\ImGui">
       <UniqueIdentifier>{e652e559-99af-4a30-8a9c-a62fb2d3ced0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Assesment">
-      <UniqueIdentifier>{1e019880-175b-4db1-ae39-43e8e38529de}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Assessment">
-      <UniqueIdentifier>{c5fc91a7-cd67-4696-913f-21e1c718526f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Lights">
       <UniqueIdentifier>{993a7f3b-1ecc-4f30-ab8e-cbfafe7bb21a}</UniqueIdentifier>
     </Filter>
@@ -66,6 +60,9 @@
     </Filter>
     <Filter Include="Header Files\Physics">
       <UniqueIdentifier>{8df1fe98-bb03-4624-9846-b679f3e2d4b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\AIE Classes">
+      <UniqueIdentifier>{6ff55a42-ae9e-4bb7-b93b-789b2d44c302}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -117,9 +114,6 @@
     <ClCompile Include="Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Assessment.cpp">
-      <Filter>Source Files\Assesment</Filter>
-    </ClCompile>
     <ClCompile Include="GUI.cpp">
       <Filter>Source Files\GUI</Filter>
     </ClCompile>
@@ -140,6 +134,18 @@
     </ClCompile>
     <ClCompile Include="PhysicsScene.cpp">
       <Filter>Source Files\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="AIE Classes\Font.cpp">
+      <Filter>Header Files\AIE Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="AIE Classes\Renderer2D.cpp">
+      <Filter>Header Files\AIE Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="AIE Classes\Texture.cpp">
+      <Filter>Header Files\AIE Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Rocket.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -194,9 +200,6 @@
     <ClInclude Include="DirectionalLight.h">
       <Filter>Header Files\Lights</Filter>
     </ClInclude>
-    <ClInclude Include="Assessment.h">
-      <Filter>Header Files\Assessment</Filter>
-    </ClInclude>
     <ClInclude Include="GUI.h">
       <Filter>Header Files\GUI</Filter>
     </ClInclude>
@@ -217,6 +220,18 @@
     </ClInclude>
     <ClInclude Include="PhysicsScene.h">
       <Filter>Header Files\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="AIE Classes\Font.h">
+      <Filter>Header Files\AIE Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="AIE Classes\Renderer2D.h">
+      <Filter>Header Files\AIE Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="AIE Classes\Texture.h">
+      <Filter>Header Files\AIE Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Rocket.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
