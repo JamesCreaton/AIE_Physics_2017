@@ -1,5 +1,6 @@
 #pragma once
 #include "PhysicsObject.h"
+#include <set>
 #include <vector>
 
 class PhysicsScene
@@ -8,23 +9,17 @@ public:
 	PhysicsScene();
 	~PhysicsScene();
 
-	void addActor(PhysicsObject* actor);
-	void removeActor(PhysicsObject* actor);
+	void Add(PhysicsObject* physicsObject);
+	void Remove(PhysicsObject* objectToRemove);
 
-	void update(float dt);
-	void updateGizmos();
-	void debugScene();
+	void Update(float dt);
 
-	void setGravity(const glm::vec2 gravity) { m_gravity = gravity; }
-	glm::vec2 getGravity() const { return m_gravity; }
-
-	void setTimeStep(const float timeStep) { m_timeStep = timeStep; }
-	float getTimeStep() const { return m_timeStep; }
+	void SetGravity(const glm::vec3 gravity) { m_gravity = gravity; }
+	glm::vec3 GetGravity() const { return m_gravity; }
 
 protected:
-	glm::vec2 m_gravity;
-	float m_timeStep;
-	std::vector<PhysicsObject*> m_actors;
+	std::set<PhysicsObject*> m_physicsObjects;
+	glm::vec3	m_gravity;
 };
 
 

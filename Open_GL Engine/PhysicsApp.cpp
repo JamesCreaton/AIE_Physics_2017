@@ -2,9 +2,11 @@
 #include "GUI.h"
 #include <Gizmos.h>
 #include "PhysicsScene.h"
-#include "Sphere.h"
 #include <glm\glm.hpp>
 #include <glm\ext.hpp>
+#include "PhysicsSphereShape.h"
+#include "AIE Classes\FlyCamera.h"
+
 
 
 PhysicsApp::PhysicsApp()
@@ -19,84 +21,75 @@ PhysicsApp::~PhysicsApp()
 bool PhysicsApp::startup()
 {
 	aie::Gizmos::create(64000, 64000, 64000, 64000);
-
-	m_2dRenderer = new aie::Renderer2D();
-
 	m_font = new aie::Font("./font/consolas.tff", 32);
+
+	//Set up camera
+	m_pCamera = new FlyCamera(*m_window);
+	m_pCamera->SetLookAt(glm::vec3(650, 0, 0), glm::vec3(0), glm::vec3(0, 1, 0));
+	m_pCamera->SetPerspective(glm::pi<float>() * 0.25f,
+		(float)getWindowWidth() / getWindowHeight(),
+		0.1f, 1000.f);
+
+	m_pCamera->SetRotationSpeed(0.1f);
+	m_pCamera->SetMoveSpeed(15.0f);
 
 	//Set up physics scene
 	m_physicsScene = new PhysicsScene();
-	m_physicsScene->setGravity(vec2(0, -1.1f));
-	m_physicsScene->setTimeStep(0.01f);
+	m_physicsScene->SetGravity(glm::vec3(0, -9.8f, 0));
+	m_demoGameObject = new GameObject();
 
-	rocket = new Rocket(vec2(0, -30), vec2(0, 1), 1.0f, 3, vec4(0, 1, 1, 1));
-	m_physicsScene->addActor(rocket);
+	PhysicsObject* demoPhysicsObject = new PhysicsObject(5.0f);
+	demoPhysicsObject->AddShape(new PhysicsSphereShape(2.0f));
+
+	m_physicsScene->Add(demoPhysicsObject);
+	m_demoGameObject->SetPhysicsObject(demoPhysicsObject);
+	m_demoGameObject->GetPhyicsObject()->SetVelocity(glm::vec3(10.0f, 25.0f, 0.0f));
 
 	return true;
 }
 
 void PhysicsApp::shutdown()
 {
-
+	delete m_physicsScene;
+	delete m_demoGameObject;
+	delete m_pCamera;
 }
 
 void PhysicsApp::update(float deltaTime)
-{   
-	timer += deltaTime;
+{
+	//Clear Gizmos for this frame
+	aie::Gizmos::clear();
 
 	//Update Input
 	m_input = aie::Input::getInstance();
 
-	//Clear Gizmos for this frame
-	aie::Gizmos::clear();
+	//UpdateCamera
+	m_pCamera->Update(deltaTime);
 
 	//Update Physics
-	m_physicsScene->update(deltaTime);
-	m_physicsScene->updateGizmos();
-
-	if (rocket->getMass() > 0.0f) {
-		if (m_input->isKeyDown(GLFW_KEY_SPACE)) {
-			rocket->applyForce(vec2(0, 0.1f));
-
-			if (timer >= timeStep) {
-				rocket->SetMass(rocket->getMass() - 0.7f);
-				m_exhaustParticles.push_back(new Sphere(rocket->getPosition(),vec2(-rocket->getVelocity()), 0.2f, 2.0f, vec4(1, 1, 1, 1)));
-				rocket->applyForceToActor(m_exhaustParticles[0],
-					vec2(0, -rocket->getVelocity().y));
-
-				timer = 0.0f;
-			}
-		}
-	}
-
-
-	auto gizmoIterator = m_exhaustParticles.begin();
-	for (; gizmoIterator != m_exhaustParticles.end(); gizmoIterator++)
-	{
-		(*gizmoIterator)->makeGizmo();
-	}
-
+	m_physicsScene->Update(0.016f);
 }
 
 void PhysicsApp::draw()
 {
 	//Wipe the screen to the background colour
 	clearScreen();
-	setBackgroundColour(vec4(0.25f, 0.25f, 0.25f, 1));
+	setBackgroundColour(0.25f, 0.25f, 0.25f, 1);
 
-	//m_2dRenderer->setCameraPos(rocket->getPosition().x, rocket->getPosition().y);
+	//Add a point at wolrd origin
+	aie::Gizmos::addTransform(mat4(1));
 
-	m_2dRenderer->begin();
-	static float aspectRatio = 16 / 9.f;
-	aie::Gizmos::draw2D(glm::ortho<float>(
-		-100, 100,
-		-100 / aspectRatio, 100 / aspectRatio, -1.0f, 1.0f));
+	//Draw a simple grid
+	DrawGizmoGrid();
 
-	m_2dRenderer->drawText(m_font, "test", 0, 0);
+	//Draw the physics objects
+	m_demoGameObject->DebugPhysicsRender();
 
-	m_2dRenderer->end();
+	//Draw the camera
+	aie::Gizmos::draw(m_pCamera->GetProjectionView());
 }
 
+//Wrapper function for drawing a simple grid using aie::Gizmos
 void PhysicsApp::DrawGizmoGrid()
 {
 	vec4 white(1);

@@ -1,17 +1,16 @@
 #pragma once
 #include "Application.h"
 #include "Input.h"
-#include "FlyCamera.h"
 #include "AIE Classes\Renderer2D.h"
 #include "AIE Classes\Font.h"
-
-#include "Rocket.h"
+#include "GameObject.h"
 
 using glm::vec2;
 using glm::vec3;
 using glm::vec4;
 using aie::Input;
 
+class FlyCamera;
 class PhysicsScene;
 class Sphere;
 class GUI;
@@ -31,20 +30,16 @@ public:
 	void DrawGizmoGrid();
 
 protected:
-
+	FlyCamera*			m_pCamera;
 	GUI*				m_GUI;
 	PhysicsScene*       m_physicsScene;
+	GameObject*			m_demoGameObject;
+
 	aie::Input*			m_input;
 
 	glm::mat4			m_viewMatrix;
 	glm::mat4			m_projectionMatrix;
-	aie::Renderer2D*	m_2dRenderer;
-	Rocket* rocket;
-	aie::Font*			m_font;
-	
-	std::vector<Sphere*> m_exhaustParticles;
 
-	float timer = 0.0f;
-	float timeStep = 0.4f;
+	aie::Font*			m_font;
 };
 

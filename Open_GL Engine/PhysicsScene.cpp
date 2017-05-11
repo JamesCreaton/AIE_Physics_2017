@@ -3,6 +3,7 @@
 
 
 PhysicsScene::PhysicsScene()
+	:m_gravity(glm::vec3(0,0,0))
 {
 }
 
@@ -11,31 +12,20 @@ PhysicsScene::~PhysicsScene()
 {
 }
 
-void PhysicsScene::addActor(PhysicsObject * actor)
+void PhysicsScene::Add(PhysicsObject * physicsObject)
 {
-	m_actors.push_back(actor);
+	m_physicsObjects.insert(physicsObject);
 }
 
-void PhysicsScene::removeActor(PhysicsObject * actor)
+void PhysicsScene::Remove(PhysicsObject * objectToRemove)
 {
-	auto position = std::find(m_actors.begin(), m_actors.end(), actor);
-	m_actors.erase(position);
+	m_physicsObjects.erase(objectToRemove);
 }
 
-void PhysicsScene::update(float dt)
+void PhysicsScene::Update(float dt)
 {
-	auto updateIterator = m_actors.begin();
-	for (; updateIterator != m_actors.end(); updateIterator++)
-	{
-		(*updateIterator)->fixedUpdate(m_gravity, m_timeStep);
-	}
-}
-
-void PhysicsScene::updateGizmos()
-{
-	auto gizmoIterator = m_actors.begin();
-	for (; gizmoIterator != m_actors.end(); gizmoIterator++)
-	{
-		(*gizmoIterator)->makeGizmo();
+	for (PhysicsObject* object : m_physicsObjects) {
+		object->AddAcceleration(m_gravity);
+		object->Update(dt);
 	}
 }

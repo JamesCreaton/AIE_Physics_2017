@@ -69,9 +69,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\deps\aie\Gizmos.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\deps\gl_core_4_4\gl_core_4_4.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -123,13 +120,7 @@
     <ClCompile Include="PhysicsApp.cpp">
       <Filter>Source Files\Physics</Filter>
     </ClCompile>
-    <ClCompile Include="Rigidbody.cpp">
-      <Filter>Source Files\Physics</Filter>
-    </ClCompile>
     <ClCompile Include="PhysicsObject.cpp">
-      <Filter>Source Files\Physics</Filter>
-    </ClCompile>
-    <ClCompile Include="Sphere.cpp">
       <Filter>Source Files\Physics</Filter>
     </ClCompile>
     <ClCompile Include="PhysicsScene.cpp">
@@ -138,20 +129,26 @@
     <ClCompile Include="AIE Classes\Font.cpp">
       <Filter>Header Files\AIE Classes</Filter>
     </ClCompile>
-    <ClCompile Include="AIE Classes\Renderer2D.cpp">
-      <Filter>Header Files\AIE Classes</Filter>
-    </ClCompile>
     <ClCompile Include="AIE Classes\Texture.cpp">
       <Filter>Header Files\AIE Classes</Filter>
     </ClCompile>
-    <ClCompile Include="Rocket.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="AIE Classes\Camera.cpp">
+      <Filter>Header Files\AIE Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="AIE Classes\SphereBoundingVolume.cpp">
+      <Filter>Header Files\AIE Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Source Files\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\deps\aie\Gizmos.cpp">
+      <Filter>Header Files\AIE Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="AIE Classes\FlyCamera.cpp">
+      <Filter>Header Files\AIE Classes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\deps\aie\Gizmos.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\deps\gl_core_4_4\gl_core_4_4.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -209,13 +206,7 @@
     <ClInclude Include="PhysicsApp.h">
       <Filter>Header Files\Lights</Filter>
     </ClInclude>
-    <ClInclude Include="Rigidbody.h">
-      <Filter>Header Files\Physics</Filter>
-    </ClInclude>
     <ClInclude Include="PhysicsObject.h">
-      <Filter>Header Files\Physics</Filter>
-    </ClInclude>
-    <ClInclude Include="Sphere.h">
       <Filter>Header Files\Physics</Filter>
     </ClInclude>
     <ClInclude Include="PhysicsScene.h">
@@ -230,8 +221,29 @@
     <ClInclude Include="AIE Classes\Texture.h">
       <Filter>Header Files\AIE Classes</Filter>
     </ClInclude>
-    <ClInclude Include="Rocket.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="AIE Classes\BoundingObject.h">
+      <Filter>Header Files\AIE Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="AIE Classes\Camera.h">
+      <Filter>Header Files\AIE Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="AIE Classes\FlyCamera.h">
+      <Filter>Header Files\AIE Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="AIE Classes\SphereBoundingVolume.h">
+      <Filter>Header Files\AIE Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsShape.h">
+      <Filter>Header Files\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsSphereShape.h">
+      <Filter>Header Files\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Header Files\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\deps\aie\Gizmos.h">
+      <Filter>Header Files\AIE Classes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
