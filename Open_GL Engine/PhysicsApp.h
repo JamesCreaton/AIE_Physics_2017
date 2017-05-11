@@ -33,7 +33,10 @@ protected:
 	FlyCamera*			m_pCamera;
 	GUI*				m_GUI;
 	PhysicsScene*       m_physicsScene;
-	GameObject*			m_demoGameObject;
+
+	GameObject*			m_SphereObject;
+	GameObject*			m_planeObject;
+	GameObject*			m_aabbObject;
 
 	aie::Input*			m_input;
 

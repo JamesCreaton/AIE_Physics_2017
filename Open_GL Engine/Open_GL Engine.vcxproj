@@ -210,6 +210,8 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GeometryHelper.h" />
     <ClInclude Include="GUI.h" />
+    <ClInclude Include="PhysicsAABBShape.h" />
+    <ClInclude Include="PhysicsPlaneShape.h" />
     <ClInclude Include="imgui_glfw3.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Light.h" />

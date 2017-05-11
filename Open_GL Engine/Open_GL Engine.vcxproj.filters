@@ -245,6 +245,12 @@
     <ClInclude Include="..\deps\aie\Gizmos.h">
       <Filter>Header Files\AIE Classes</Filter>
     </ClInclude>
+    <ClInclude Include="PhysicsPlaneShape.h">
+      <Filter>Header Files\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsAABBShape.h">
+      <Filter>Header Files\Physics</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Open_GL Engine.rc">
