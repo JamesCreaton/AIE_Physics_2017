@@ -182,6 +182,7 @@
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PhysicsApp.cpp" />
+    <ClCompile Include="PhysicsCollision.cpp" />
     <ClCompile Include="PhysicsObject.cpp" />
     <ClCompile Include="PhysicsScene.cpp" />
     <ClCompile Include="RenderData.cpp" />
@@ -211,6 +212,7 @@
     <ClInclude Include="GeometryHelper.h" />
     <ClInclude Include="GUI.h" />
     <ClInclude Include="PhysicsAABBShape.h" />
+    <ClInclude Include="PhysicsCollision.h" />
     <ClInclude Include="PhysicsPlaneShape.h" />
     <ClInclude Include="imgui_glfw3.h" />
     <ClInclude Include="Input.h" />

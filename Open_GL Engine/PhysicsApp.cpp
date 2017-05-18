@@ -9,7 +9,7 @@
 #include "PhysicsAABBShape.h"
 #include "AIE Classes\FlyCamera.h"
 
-
+#include "PhysicsCollision.h"
 
 PhysicsApp::PhysicsApp()
 {
@@ -27,7 +27,7 @@ bool PhysicsApp::startup()
 
 	//Set up camera
 	m_pCamera = new FlyCamera(*m_window);
-	m_pCamera->SetLookAt(glm::vec3(50, 10, 0), glm::vec3(0), glm::vec3(0, 1, 0));
+	m_pCamera->SetLookAt(glm::vec3(150, 60, 0), glm::vec3(0), glm::vec3(0, 1, 0));
 	m_pCamera->SetPerspective(glm::pi<float>() * 0.25f,
 		(float)getWindowWidth() / getWindowHeight(),
 		0.1f, 1000.f);
@@ -39,32 +39,32 @@ bool PhysicsApp::startup()
 	m_physicsScene = new PhysicsScene();
 	m_physicsScene->SetGravity(glm::vec3(0, -9.8f, 0));
 
-
 	//Create a plane
 	m_planeObject = new GameObject();
-	PhysicsObject* physicsPlane = new PhysicsObject(1.0f);
-	physicsPlane->AddShape(new PhysicsPlaneShape(glm::vec3(0, 1, 0), 0));
+	PhysicsObject* physicsPlane = new PhysicsObject(std::numeric_limits<float>().max());
+	physicsPlane->AddShape(new PhysicsPlaneShape(glm::normalize(glm::vec3(0, 1, 1)), 0));
+	physicsPlane->SetIsStatic(true);
 	m_planeObject->SetPhysicsObject(physicsPlane);
-	m_planeObject->GetPhysicsObject()->SetVelocity(glm::vec3(0.0f, 9.8f, 0.0f));
 
-	//Create an AABB
-	m_aabbObject = new GameObject();
-	PhysicsObject* physicsAABB = new PhysicsObject(1.0f);
-	physicsAABB->AddShape(new PhysicsAABBShape(glm::vec3(5)));
-	m_aabbObject->SetPhysicsObject(physicsAABB);
-	m_aabbObject->GetPhysicsObject()->SetVelocity(glm::vec3(0.0f, 9.8f, 0.0f));
+	//Create a plane
+	m_planeObject2 = new GameObject();
+	PhysicsObject* physicsPlane2 = new PhysicsObject(std::numeric_limits<float>().max());
+	physicsPlane2->AddShape(new PhysicsPlaneShape(glm::normalize(glm::vec3(0, 1, -1)), 0));
+	physicsPlane2->SetIsStatic(true);
+	m_planeObject2->SetPhysicsObject(physicsPlane2);
 
 	//Create a sphere
 	m_SphereObject = new GameObject();
-	PhysicsObject* physicsSphere = new PhysicsObject(5.0f);
+	PhysicsObject* physicsSphere = new PhysicsObject(2.0f);
 	physicsSphere->AddShape(new PhysicsSphereShape(2.0f));
+
 	m_SphereObject->SetPhysicsObject(physicsSphere);
-	m_SphereObject->GetPhysicsObject()->SetVelocity(glm::vec3(10.0f, 25.0f, 0.0f));
+	m_SphereObject->GetPhysicsObject()->SetPosition(glm::vec3(0, 215, 10));
 
 
 	m_physicsScene->Add(physicsPlane);
+	m_physicsScene->Add(physicsPlane2);
 	m_physicsScene->Add(physicsSphere);
-	m_physicsScene->Add(physicsAABB);
 
 	return true;
 }
@@ -87,7 +87,11 @@ void PhysicsApp::update(float deltaTime)
 	m_pCamera->Update(deltaTime);
 
 	//Update Physics
-	m_physicsScene->Update(0.001f);
+	m_physicsScene->Update(deltaTime);
+
+	std::cout << "X: " << m_SphereObject->GetPhysicsObject()->GetPosition().x << std::endl;
+	std::cout << "Y: " << m_SphereObject->GetPhysicsObject()->GetPosition().y << std::endl;
+	
 }
 
 void PhysicsApp::draw()
@@ -99,13 +103,10 @@ void PhysicsApp::draw()
 	//Add a point at wolrd origin
 	aie::Gizmos::addTransform(mat4(1));
 
-	//Draw a simple grid
-	//DrawGizmoGrid();
-
 	//Draw the physics objects
 	m_SphereObject->DebugPhysicsRender();
 	m_planeObject->DebugPhysicsRender();
-	m_aabbObject->DebugPhysicsRender();
+	m_planeObject2->DebugPhysicsRender();
 
 	//Draw the camera
 	aie::Gizmos::draw(m_pCamera->GetProjectionView());

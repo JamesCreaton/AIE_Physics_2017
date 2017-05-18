@@ -1,17 +1,26 @@
 #include "PhysicsObject.h"
 
 PhysicsObject::PhysicsObject(const float a_mass)
+	:m_shape(nullptr),
+	m_isStatic(false),
+	m_position(glm::vec3(0)),
+	m_velocity(glm::vec3(0)),
+	m_acceleration(glm::vec3(0)),
+	m_force(glm::vec3(0)),
+	m_mass(a_mass)
 {
-	m_mass = a_mass;
-	m_position = glm::vec3(0, 0, 0);
-	m_acceleration = glm::vec3(0, 0, 0);
-	m_force = glm::vec3(0, 0, 0);
-	m_shape = nullptr;
+
 }
 
 PhysicsObject::PhysicsObject()
 {
-
+	m_shape = nullptr;
+	m_isStatic =false;
+	m_position = glm::vec3(0);
+	m_velocity = glm::vec3(0);
+	m_acceleration = glm::vec3(0);
+	m_force = glm::vec3(0);
+	m_mass = 1.0f;
 }
 
 PhysicsObject::~PhysicsObject()

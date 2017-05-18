@@ -29,6 +29,36 @@ void GameObject::DebugPhysicsRender()
 		case PhysicsShape::ShapeType::PLANE:
 		{
 			PhysicsPlaneShape* pPlane = (PhysicsPlaneShape*)pShape;
+			glm::vec3 right(pPlane->GetNormal());
+			glm::vec3 forward;
+			glm::vec3 up;
+
+			glm::vec3 worldup(0, 1, 0);
+			glm::vec3 worldForward(0, 0, 1);
+
+			if (glm::dot(right, worldup) < 0.99f)
+			{
+				forward = glm::cross(right, worldup);
+				up = glm::cross(forward, right);
+			}
+			else
+			{
+				up = glm::vec3(-1, 0, 0);
+				forward = worldForward;
+			}
+
+			glm::mat4 rotation(1);
+			rotation[0] = glm::vec4(right, 0);
+			rotation[1] = glm::vec4(up, 0);
+			rotation[2] = glm::vec4(forward, 0);
+			rotation[3] = glm::vec4(pPlane->GetDistance(), 0, 0, 1);
+
+			glm::vec3 offset;
+			glm::vec3 normal = pPlane->GetNormal();
+
+			aie::Gizmos::addAABBFilled((position), glm::vec3(0.3f, 20, 20), glm::vec4(0, 0, 1, 1), &rotation);
+
+			/*PhysicsPlaneShape* pPlane = (PhysicsPlaneShape*)pShape;
 
 			glm::vec3 centerPoint = pPlane->GetNormal() * pPlane->GetDistance();
 			glm::vec3 planeNormal = pPlane->GetNormal();
@@ -57,14 +87,13 @@ void GameObject::DebugPhysicsRender()
 			);
 
 			aie::Gizmos::addLine(centerPoint, pvn, planeColour);
-
-			break;
+			break;*/
 		}
 		case PhysicsShape::ShapeType::AABB:
 		{
 			PhysicsAABBShape* pAABB = (PhysicsAABBShape*)pShape;
 
-			aie::Gizmos::addAABBFilled(position, pAABB->GetExtents(), glm::vec4(1,0,0,1));
+			aie::Gizmos::addAABBFilled(position, pAABB->GetExtents(), glm::vec4(1, 0, 0, 1));
 			break;
 		}
 		case PhysicsShape::ShapeType::SPHERE:

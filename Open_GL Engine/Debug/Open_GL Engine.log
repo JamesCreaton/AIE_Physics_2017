@@ -4,4 +4,5 @@ C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.target
 C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(936,5): warning MSB8027: Two or more files with the name of SphereBoundingVolume.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are AIE Classes\SphereBoundingVolume.cpp, SphereBoundingVolume.cpp.
 C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(936,5): warning MSB8027: Two or more files with the name of Texture.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are AIE Classes\Texture.cpp, Texture.cpp.
   PhysicsApp.cpp
+cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
   Open_GL Engine.vcxproj -> C:\Users\s171110\Documents\AIE_physics_17\builds\Open_GL Engine.exe

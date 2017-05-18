@@ -147,6 +147,9 @@
     <ClCompile Include="AIE Classes\FlyCamera.cpp">
       <Filter>Header Files\AIE Classes</Filter>
     </ClCompile>
+    <ClCompile Include="PhysicsCollision.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\deps\gl_core_4_4\gl_core_4_4.h">
@@ -250,6 +253,9 @@
     </ClInclude>
     <ClInclude Include="PhysicsAABBShape.h">
       <Filter>Header Files\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsCollision.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -6,7 +6,8 @@ public:
 	{
 		PLANE,
 		AABB, 
-		SPHERE
+		SPHERE,
+		NUM_SHAPES
 	};
 	
 	PhysicsShape() = delete;
