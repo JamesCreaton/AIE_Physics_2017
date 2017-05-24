@@ -25,6 +25,7 @@ void PhysicsScene::Remove(PhysicsObject * objectToRemove)
 void PhysicsScene::Update(float dt)
 {
 	for (PhysicsObject* object : m_physicsObjects) {
+
 		if (!object->GetIsStatic()) {
 			object->AddAcceleration(m_gravity);
 			object->Update(dt);

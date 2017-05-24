@@ -56,7 +56,7 @@ void GameObject::DebugPhysicsRender()
 			glm::vec3 offset;
 			glm::vec3 normal = pPlane->GetNormal();
 
-			aie::Gizmos::addAABBFilled((position), glm::vec3(0.3f, 20, 20), glm::vec4(0, 0, 1, 1), &rotation);
+			aie::Gizmos::addAABBFilled((position), glm::vec3(0.3f, 80, 80), glm::vec4(0, 0, 1, 1), &rotation);
 
 			/*PhysicsPlaneShape* pPlane = (PhysicsPlaneShape*)pShape;
 

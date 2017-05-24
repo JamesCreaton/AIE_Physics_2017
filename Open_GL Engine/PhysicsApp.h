@@ -1,9 +1,10 @@
 #pragma once
 #include "Application.h"
+#include <list>
+
 #include "Input.h"
-#include "AIE Classes\Renderer2D.h"
 #include "AIE Classes\Font.h"
-#include "GameObject.h"
+
 
 using glm::vec2;
 using glm::vec3;
@@ -14,6 +15,7 @@ class FlyCamera;
 class PhysicsScene;
 class Sphere;
 class GUI;
+class GameObject;
 
 class PhysicsApp : public Application
 {
@@ -34,15 +36,12 @@ protected:
 	GUI*				m_GUI;
 	PhysicsScene*       m_physicsScene;
 
-	GameObject*			m_SphereObject;
-	GameObject*			m_planeObject;
-	GameObject*			m_aabbObject;
+	std::list<GameObject*> m_gameObjects;
 
 	aie::Input*			m_input;
+	aie::Font*			m_font;
 
 	glm::mat4			m_viewMatrix;
 	glm::mat4			m_projectionMatrix;
-
-	aie::Font*			m_font;
 };
 

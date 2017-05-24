@@ -148,7 +148,7 @@
       <Filter>Header Files\AIE Classes</Filter>
     </ClCompile>
     <ClCompile Include="PhysicsCollision.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Physics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -206,9 +206,6 @@
     <ClInclude Include="SphereBoundingVolume.h">
       <Filter>Header Files\Cameras\SphereBoundingVolume</Filter>
     </ClInclude>
-    <ClInclude Include="PhysicsApp.h">
-      <Filter>Header Files\Lights</Filter>
-    </ClInclude>
     <ClInclude Include="PhysicsObject.h">
       <Filter>Header Files\Physics</Filter>
     </ClInclude>
@@ -254,8 +251,11 @@
     <ClInclude Include="PhysicsAABBShape.h">
       <Filter>Header Files\Physics</Filter>
     </ClInclude>
+    <ClInclude Include="PhysicsApp.h">
+      <Filter>Header Files\Physics</Filter>
+    </ClInclude>
     <ClInclude Include="PhysicsCollision.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Physics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
