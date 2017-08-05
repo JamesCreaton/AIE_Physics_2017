@@ -1,7 +1,6 @@
 # README #
 
-This repository contains the work that I have completed at Academy of Interactive Entertainment for my second year programming
-assessments. The project has a basic OpenGL engine that is able to load shaders from file in .vert and .frag format 
+This repository contains the work that I have completed at Academy of Interactive Entertainment for my second year programming assessments. The project has a basic OpenGL engine that is able to load shaders from file in .vert and .frag format 
 and 3D models in .obj format. There is a basic flycamera class that allows you to move around the scene with wasd and
 mouse input. The Physics library contains collision detection and resoultion for sphere, AABB and place objects with
 quite fast response, tested with a plane and 100 objects of sphere and AABB type with decent performace.
@@ -19,5 +18,9 @@ in the deps folder.
 ### Who do I talk to? ###
 
 James Creaton
-	jamescreatonn@gmail.com
-		jamescreaton.com
+
+
+jamescreatonn@gmail.com
+
+
+jamescreaton.com
