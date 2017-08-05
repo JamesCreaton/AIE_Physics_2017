@@ -19,5 +19,5 @@ in the deps folder.
 ### Who do I talk to? ###
 
 James Creaton
-jamescreatonn@gmail.com
-jamescreaton.com
+	jamescreatonn@gmail.com
+		jamescreaton.com
